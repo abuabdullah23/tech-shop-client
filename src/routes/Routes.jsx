@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import Products from "../pages/Products/Products";
+import ProductDetails from "../pages/ProductDetails/ProductDetails";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
                 path: '/products/:title',
                 element: <Products />,
                 loader: () => fetch('/brands.json')
+            },
+            {
+                path: '/product-details/:id',
+                element: <PrivateRoutes><ProductDetails /></PrivateRoutes>,
+                loader: ({params}) => fetch(`${import.meta.env.VITE_BASE_API}/product-details/${params.id}`)
             },
             {
                 path: '/login',
