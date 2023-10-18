@@ -90,7 +90,9 @@ const AddProduct = () => {
                                 <option value='Computer'>Computer</option>
                                 <option value='Camera'>Camera</option>
                                 <option value='Development Tools'>Development Tools</option>
+                                <option value='Electronics'>Electronics</option>
                                 <option value='Headphone'>Headphone</option>
+                                <option value='Health'>Health</option>
                                 <option value='Laptop'>Laptop</option>
                                 <option value='Laptop Accessories'>Laptop Accessories</option>
                                 <option value='Mobile'>Mobile</option>
@@ -99,6 +101,7 @@ const AddProduct = () => {
                                 <option value='Memory'>Memory</option>
                                 <option value='Smart Speaker'>Smart Speaker</option>
                                 <option value='Servers'>Servers</option>
+                                <option value='Smart Tools'>Smart Tools</option>
                                 <option value='Software'>Software</option>
                                 <option value='TV'>TV</option>
                                 <option value='Tablet'>Tablet</option>

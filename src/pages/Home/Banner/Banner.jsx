@@ -3,7 +3,7 @@ import banner_img from '../../../assets/images/Banner/Banner_image.webp'
 
 const Banner = () => {
     return (
-        <div className='md:px-10 p-5 lg:flex sm:flex-row-reverse gap-10 justify-between items-center'>
+        <div className='md:px-10 p-5 lg:flex sm:flex-row-reverse gap-10 justify-between items-center bg-gray-200'>
             <div className='flex items-end'>
                 <img className='w-full' src={banner_img} alt="Banner Image" />
             </div>
