@@ -25,5 +25,6 @@ module.exports = {
     "react/display-name": "off",
     "react-hooks/exhaustive-deps": "off",
     "react-refresh/only-export-components": "off",
+    "no-undef": "off",
   },
 }
