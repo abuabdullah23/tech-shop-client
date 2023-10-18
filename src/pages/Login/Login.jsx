@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import Loader from '../../components/Loader/Loader';
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
+import useAuth from '../../hooks/useAuth';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [seePass, setSeePass] = useState(true);
-    // TODO: have to dynamic
-    const { loading } = false;
+    const { loading, setLoading, login } = useAuth();
 
     // handle login form value
     const handleSubmitForm = (event) => {
@@ -15,6 +16,16 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+
+        login(email, password)
+            .then(res => {
+                toast.success('Login Successful');
+                setLoading(false);
+            })
+            .catch(error => {
+                toast.error(error.message);
+                setLoading(false);
+            })
     }
 
     return (

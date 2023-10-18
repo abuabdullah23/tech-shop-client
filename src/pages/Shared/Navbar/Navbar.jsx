@@ -6,10 +6,18 @@ import ActiveLink from '../../../components/ActiveLink/ActiveLink';
 import { FaList } from 'react-icons/fa';
 import logo from '../../../assets/images/tech-shop-logo.png'
 import smallLogo from '../../../assets/images/logo.png'
+import useAuth from '../../../hooks/useAuth';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
-    const user = null;
+    const { user, logOut } = useAuth();
     const [show, setShow] = useState(false);
+
+    const handleLogOut = () => {
+        logOut().then(res => {
+            toast.success('Log Out successful')
+        })
+    }
 
     return (
         <div className='sticky top-0 z-10 shadow py-3 bg-white'>
@@ -57,8 +65,8 @@ const Navbar = () => {
                         {
                             user ? <>
                                 <div className='flex items-center gap-3'>
-                                    <img className='h-8 w-8 rounded-full' src="https://cdn-icons-png.flaticon.com/128/3177/3177440.png" alt="user image" />
-                                    <button className='text-gray-600 hover:text-red-500 font-semibold'>Log Out</button>
+                                    <img className='h-8 w-8 rounded-full' src={user ? user.photoURL : "https://cdn-icons-png.flaticon.com/128/3177/3177440.png"} alt="user image" title={user?.displayName} />
+                                    <button onClick={handleLogOut} className='text-gray-600 hover:text-red-500 font-semibold'>Log Out</button>
                                 </div>
                             </> : <>
                                 <Link className='text-gray-600 hover:text-cyan-500 font-semibold' to={'/login'}>Log In</Link>

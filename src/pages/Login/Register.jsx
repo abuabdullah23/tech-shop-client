@@ -3,21 +3,45 @@ import { Link } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import { useState } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
+import useAuth from '../../hooks/useAuth';
+import { toast } from 'react-toastify';
 
 const Register = () => {
     const [seePass, setSeePass] = useState(true);
-
-    // TODO: have dynamic
-    const { loading } = false;
+    const { loading, setLoading, createUser, handleUpdateProfile } = useAuth();
 
     // handle registration form value
     const handleSubmitForm = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
-        const name = form.name.value;
         const password = form.password.value;
+        const name = form.name.value;
         const photo = form.photo.value;
+
+        // condition for strong password
+        if (password.length < 6) {
+            toast.error('Password must be 6 characters.')
+            return;
+        } else if (!/(?=.*[A-Z])/.test(password)) {
+            toast.error('Please include one capital letter.');
+            return;
+        } else if (!/(?=.*[!@#$&*])/.test(password)) {
+            toast.error('Please add a special character.');
+            return;
+        }
+
+        createUser(email, password)
+            .then(res => {
+                handleUpdateProfile(name, photo)
+                    .then(res => {
+                        toast.success('Registration Successful');
+                    })
+            })
+            .catch(error => {
+                toast.error(error.message);
+                setLoading(false);
+            })
     }
 
     return (
@@ -82,7 +106,6 @@ const Register = () => {
                                 name="photo"
                                 className="px-3 py-2 outline-none border border-slate-300 bg-transparent rounded-md focus:border-gray-400 overflow-hidden" />
                         </div>
-
 
                         {/* submit button */}
                         <button
