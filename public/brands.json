@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "title": "Apple",
+        "image": "https://cdn-icons-png.flaticon.com/128/0/747.png",
+        "slider_images": [
+            "https://i.ibb.co/XVzYDFM/apple-brand-1.webp",
+            "https://i.ibb.co/wWqvMfN/apple-brand-2.webp",
+            "https://i.ibb.co/pWKBfzH/apple-brand-3.png"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Google",
+        "image": "https://cdn-icons-png.flaticon.com/128/300/300221.png",
+        "slider_images": [
+            "https://i.ibb.co/hfNSkd3/1-google-brand.jpg",
+            "https://i.ibb.co/pJZP1Zh/2-google-brand.webp",
+            "https://i.ibb.co/1bJmGNK/3-google-brand.webp"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Intel",
+        "image": "https://cdn-icons-png.flaticon.com/128/882/882700.png",
+        "slider_images": [
+            "https://i.ibb.co/cyBCwYS/1-intel.png",
+            "https://i.ibb.co/48t6D3j/2-intel.jpg",
+            "https://i.ibb.co/8c1rDpv/3-intel.png"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Philips",
+        "image": "https://cdn-icons-png.flaticon.com/128/882/882703.png",
+        "slider_images": [
+            "https://i.ibb.co/pdN0Hnp/1-philips.png",
+            "https://i.ibb.co/tcFwvv0/2-philips.png",
+            "https://i.ibb.co/FH1GkMx/3-philips.jpg"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Samsung",
+        "image": "https://cdn-icons-png.flaticon.com/128/882/882747.png",
+        "slider_images": [
+            "https://i.ibb.co/718C4y8/1-samsung.jpg",
+            "https://i.ibb.co/Smnf9Dv/2-samsung.png",
+            "https://i.ibb.co/1q199fY/3-samsung.jpg"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Sony",
+        "image": "https://cdn-icons-png.flaticon.com/128/5969/5969151.png",
+        "slider_images": [
+            "https://i.ibb.co/cTB33xN/1-sony.jpg",
+            "https://i.ibb.co/BsJHLt5/2-sony.jpg",
+            "https://i.ibb.co/Vx2r8Xv/3-sony.jpg"
+        ]
+    }
+]
