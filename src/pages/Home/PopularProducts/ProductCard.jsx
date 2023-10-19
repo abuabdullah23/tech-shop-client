@@ -1,4 +1,5 @@
-import React from 'react';
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css'
 import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
@@ -16,11 +17,15 @@ const ProductCard = ({ product }) => {
             </div>
             <div className='p-3 flex flex-col gap-1'>
                 <h2 className='text-lg font-semibold text-cyan-600 dark:text-cyan-300' title={name}>{name.slice(0, 35)}...</h2>
+                <h3 className='text-lg text-gray-500 dark:text-gray-50'>Brand: {brandName}</h3>
                 <div className='flex items-center justify-between'>
-                    <h3 className='text-lg text-gray-500 dark:text-gray-50'>Brand: {brandName}</h3>
-                    <h2>{rating}</h2>
+                    <h2 className='text-lg font-bold text-cyan-800 dark:text-gray-50'>${price}</h2>
+                    <Rating
+                        style={{ maxWidth: 100 }}
+                        value={Math.round(rating)}
+                        readOnly
+                    />
                 </div>
-                <h2 className='text-lg font-bold text-cyan-800 dark:text-gray-50'>${price}</h2>
             </div>
         </div>
     );

@@ -24,9 +24,9 @@ const SocialLogin = () => {
 
     return (
         <div>
-            <div onClick={handleGoogleLogin} className='p-2 rounded-full w-full border border-gray-200 hover:bg-gray-200 flex items-center justify-center gap-2 cursor-pointer'>
+            <div onClick={handleGoogleLogin} className='p-2 rounded-full w-full border border-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center gap-2 cursor-pointer'>
                 <FcGoogle />
-                <span className='text-black text-sm'>Login with Google</span>
+                <span className='text-black dark:text-white text-sm'>Login with Google</span>
             </div>
         </div>
     );

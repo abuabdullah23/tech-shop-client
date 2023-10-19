@@ -45,7 +45,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='sticky top-0 z-10 shadow py-3 bg-white dark:bg-slate-900 transition-colors duration-500 dark:text-white dark:shadow-md dark:shadow-slate-200/50'>
+        <div className='sticky top-0 z-10 shadow py-3 bg-white dark:bg-slate-950 transition-colors duration-500 dark:text-white '>
             <Container>
                 <div className='flex items-center justify-between relative'>
                     <Link to={'/'} className='hidden lg:block'>

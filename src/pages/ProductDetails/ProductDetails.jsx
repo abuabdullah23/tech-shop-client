@@ -1,4 +1,5 @@
-import React from 'react';
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css'
 import { useLoaderData } from 'react-router-dom';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { FaCartPlus } from 'react-icons/fa6';
@@ -51,7 +52,12 @@ const ProductDetails = () => {
                     <h4 className='text-lg'>Brand Name: {brandName}</h4>
                     <h3 className='text-lg'>Type: {type}</h3>
                     <h4 className='text-base font-semibold text-cyan-600 dark:text-cyan-300'>Price: ${price}</h4>
-                    <h3 className='text-lg'>Rating: {rating}</h3>
+                    <h3 className='text-lg'>
+                        <Rating
+                            style={{ maxWidth: 120 }}
+                            value={Math.round(rating)}
+                            readOnly
+                        /></h3>
 
                     <button onClick={handleAddToCart} className='flex items-center gap-4 py-2 px-5 bg-cyan-500 hover:bg-cyan-600 text-white rounded mt-3 w-fit'>
                         <FaCartPlus />

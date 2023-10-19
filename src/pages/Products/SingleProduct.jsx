@@ -1,4 +1,5 @@
-import React from 'react';
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css'
 import { FaEye, FaPenAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +17,13 @@ const SingleProduct = ({ product }) => {
                 <h4 className='text-lg mt-1'>Brand Name: {brandName}</h4>
                 <h3 className='text-lg mt-1'>Type: {type}</h3>
                 <h4 className='text-base font-semibold text-cyan-600 dark:text-cyan-300 mt-1'>Price: ${price}</h4>
-                <h3 className='text-lg mt-1'>Rating: {rating}</h3>
+                <h3 className='text-lg mt-1'>
+                    <Rating
+                        style={{ maxWidth: 100 }}
+                        value={Math.round(rating)}
+                        readOnly
+                    />
+                </h3>
                 <div className='mt-2 flex items-center gap-3'>
                     <Link to={`/product-update/${_id}`} className='flex items-center gap-4 py-2 px-5 bg-cyan-500 hover:bg-cyan-600 text-white rounded'>
                         <FaPenAlt />
