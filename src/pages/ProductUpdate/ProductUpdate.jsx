@@ -1,15 +1,18 @@
-import React from 'react';
-import useAuth from '../../hooks/useAuth';
-import { useState } from 'react';
 import Loader from '../../components/Loader/Loader';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import { useLoaderData } from 'react-router-dom';
+import { useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 import { toast } from 'react-toastify';
 
-const AddProduct = () => {
+const ProductUpdate = () => {
     const [loader, setLoader] = useState(false);
+    const products = useLoaderData();
     const { user } = useAuth();
+    const { _id, name, image, price, brandName, type, description, rating } = products;
 
     // Add product method
-    const handleAddProduct = (event) => {
+    const handleUpdateProduct = (event) => {
         event.preventDefault();
         setLoader(true);
         const form = event.target;
@@ -20,7 +23,7 @@ const AddProduct = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const description = form.description.value;
-        const productInfo = {
+        const updateInfo = {
             name,
             userMail: user?.email,
             image,
@@ -31,18 +34,23 @@ const AddProduct = () => {
             description
         }
 
-        fetch(`${import.meta.env.VITE_BASE_API}/add-product`, {
-            method: 'POST',
+        fetch(`${import.meta.env.VITE_BASE_API}/update-product/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify(productInfo)
+            body: JSON.stringify(updateInfo)
         })
             .then((res) => res.json())
             .then((data) => {
-                toast.success('Product add successful.');
-                form.reset('');
-                setLoader(false);
+                if (data.modifiedCount > 0) {
+                    toast.success('Product updated successful.');
+                    setLoader(false);
+                } else {
+                    toast.error('Not updated any field.')
+                    setLoader(false)
+                }
+                console.log(data);
             })
             .catch((error) => {
                 toast.error(error.message);
@@ -52,27 +60,26 @@ const AddProduct = () => {
 
     return (
         <div className='md:px-10 my-10'>
-            <div className='text-center text-3xl font-bold'>
-                <h2>Add A New Product</h2>
-            </div>
+            <SectionTitle sectionTitle={'Update your product'} />
+
             <div>
-                <form onSubmit={handleAddProduct} className='mt-5 border rounded-lg p-5 bg-slate-100'>
+                <form onSubmit={handleUpdateProduct} className='mt-5 border rounded-lg p-5 bg-gray-200'>
                     {/* row 1 */}
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
                             <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Product Name <span className='text-red-400'>*</span> </p>
-                            <input required className='py-2 px-3 border rounded-md w-full' type="text" name="name" id="name" placeholder='Product Name' />
+                            <input required className='py-2 px-3 border rounded-md w-full' type="text" name="name" id="name" placeholder='Product Name' defaultValue={name} />
                         </div>
                         <div className='w-full'>
                             <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Image Url <span className='text-red-400'>*</span> </p>
-                            <input required className='py-2 px-3 border rounded-md w-full' type="text" name="image" id="image" placeholder='Products Image Url' />
+                            <input required className='py-2 px-3 border rounded-md w-full' type="text" name="image" id="image" placeholder='Products Image Url' defaultValue={image} />
                         </div>
                     </div>
                     {/* row 2 */}
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
                             <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Brand Name <span className='text-red-400'></span> </p>
-                            <select required className='py-2 px-3 border rounded-md w-full' type="text" name="brandName" id="brandName" placeholder='Brand Name' >
+                            <select required className='py-2 px-3 border rounded-md w-full' type="text" name="brandName" id="brandName" placeholder='Brand Name' defaultValue={brandName} >
                                 <option value=''>-- select brand --</option>
                                 <option value='Apple'>Apple</option>
                                 <option value='Google'>Google</option>
@@ -84,7 +91,7 @@ const AddProduct = () => {
                         </div>
                         <div className='w-full'>
                             <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Type<span className='text-red-400'>*</span> </p>
-                            <select required className='py-2 px-3 border rounded-md w-full' type="text" name="type" id="type" >
+                            <select required className='py-2 px-3 border rounded-md w-full' type="text" name="type" id="type" defaultValue={type}>
                                 <option value=''>-- select type --</option>
                                 <option value='Computer'>Computer</option>
                                 <option value='Camera'>Camera</option>
@@ -113,23 +120,23 @@ const AddProduct = () => {
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
                             <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Price <span className='text-red-400'>*</span> </p>
-                            <input required className='py-2 px-3 border rounded-md w-full' type="number" name="price" id="price" placeholder='$ Price in Dollar' min={0} />
+                            <input required className='py-2 px-3 border rounded-md w-full' type="number" name="price" id="price" placeholder='$ Price in Dollar' min={0} defaultValue={price} />
                         </div>
                         <div className='w-full'>
                             <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Rating <span className='text-red-400'>*</span> </p>
-                            <input required className='py-2 px-3 border rounded-md w-full' type="number" name="rating" id="rating" placeholder='Rating' min={0} />
+                            <input required className='py-2 px-3 border rounded-md w-full' type="number" name="rating" id="rating" placeholder='Rating' min={0} defaultValue={rating} />
                         </div>
                     </div>
                     {/* row 4 */}
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
                             <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Short Description</p>
-                            <textarea className='py-2 px-3 border rounded-md w-full' type="text" name="description" id="description" placeholder='Short Description' />
+                            <textarea className='py-2 px-3 border rounded-md w-full h-fit' type="text" name="description" id="description" placeholder='Short Description' defaultValue={description} />
                         </div>
                     </div>
-                    <button className='py-2 px-5 mt-5 w-full rounded-md border-2 border-cyan-500 font-semibold bg-slate-300 hover:bg-cyan-500 hover:text-white text-xl mb-5' type='submit'>
+                    <button className='py-2 px-5 mt-5 w-full rounded-md border-2 border-gray-500 font-semibold bg-slate-300 hover:bg-gray-500 hover:text-white text-xl mb-5' type='submit'>
                         {
-                            loader ? <Loader loadingText={'Adding Product...'} /> : 'Add Product'
+                            loader ? <Loader loadingText={'Updating Product...'} /> : 'Update Product'
                         }
                     </button>
                 </form>
@@ -138,4 +145,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default ProductUpdate;

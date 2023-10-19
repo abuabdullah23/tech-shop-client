@@ -18,7 +18,7 @@ const SingleProduct = ({ product }) => {
                 <h4 className='text-base font-semibold text-cyan-600 mt-1'>Price: ${price}</h4>
                 <h3 className='text-lg mt-1'>Rating: {rating}</h3>
                 <div className='mt-2 flex items-center gap-3'>
-                    <Link to={`/update-product/1`} className='flex items-center gap-4 py-2 px-5 bg-cyan-500 hover:bg-cyan-600 text-white rounded'>
+                    <Link to={`/product-update/${_id}`} className='flex items-center gap-4 py-2 px-5 bg-cyan-500 hover:bg-cyan-600 text-white rounded'>
                         <FaPenAlt />
                         <span>Update</span>
                     </Link>
