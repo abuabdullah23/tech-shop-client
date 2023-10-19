@@ -3,6 +3,7 @@ import useAuth from '../../hooks/useAuth';
 import { useState } from 'react';
 import Loader from '../../components/Loader/Loader';
 import { toast } from 'react-toastify';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 
 const AddProduct = () => {
     const [loader, setLoader] = useState(false);
@@ -52,26 +53,24 @@ const AddProduct = () => {
 
     return (
         <div className='md:px-10 my-10'>
-            <div className='text-center text-3xl font-bold'>
-                <h2>Add A New Product</h2>
-            </div>
+            <SectionTitle sectionTitle={'Add A New Product'} />
             <div>
-                <form onSubmit={handleAddProduct} className='mt-5 border rounded-lg p-5 bg-slate-100'>
+                <form onSubmit={handleAddProduct} className='mt-5 border rounded-lg p-5 bg-slate-100 dark:bg-slate-800'>
                     {/* row 1 */}
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Product Name <span className='text-red-400'>*</span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Product Name <span className='text-red-400'>*</span> </p>
                             <input required className='py-2 px-3 border rounded-md w-full' type="text" name="name" id="name" placeholder='Product Name' />
                         </div>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Image Url <span className='text-red-400'>*</span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Image Url <span className='text-red-400'>*</span> </p>
                             <input required className='py-2 px-3 border rounded-md w-full' type="text" name="image" id="image" placeholder='Products Image Url' />
                         </div>
                     </div>
                     {/* row 2 */}
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Brand Name <span className='text-red-400'></span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Brand Name <span className='text-red-400'></span> </p>
                             <select required className='py-2 px-3 border rounded-md w-full' type="text" name="brandName" id="brandName" placeholder='Brand Name' >
                                 <option value=''>-- select brand --</option>
                                 <option value='Apple'>Apple</option>
@@ -83,7 +82,7 @@ const AddProduct = () => {
                             </select>
                         </div>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Type<span className='text-red-400'>*</span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Type<span className='text-red-400'>*</span> </p>
                             <select required className='py-2 px-3 border rounded-md w-full' type="text" name="type" id="type" >
                                 <option value=''>-- select type --</option>
                                 <option value='Computer'>Computer</option>
@@ -112,18 +111,18 @@ const AddProduct = () => {
                     {/* row 3 */}
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Price <span className='text-red-400'>*</span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Price <span className='text-red-400'>*</span> </p>
                             <input required className='py-2 px-3 border rounded-md w-full' type="number" name="price" id="price" placeholder='$ Price in Dollar' min={0} />
                         </div>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Rating <span className='text-red-400'>*</span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Rating <span className='text-red-400'>*</span> </p>
                             <input required className='py-2 px-3 border rounded-md w-full' type="number" name="rating" id="rating" placeholder='Rating' min={0} />
                         </div>
                     </div>
                     {/* row 4 */}
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Short Description</p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Short Description</p>
                             <textarea className='py-2 px-3 border rounded-md w-full' type="text" name="description" id="description" placeholder='Short Description' />
                         </div>
                     </div>

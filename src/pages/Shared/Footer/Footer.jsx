@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer grid grid-cols-1 md:grid-cols-5 gap-10 items-center px-10 py-16 bg-[#1d1d1d] text-slate-200">
+            <footer className="footer grid grid-cols-1 md:grid-cols-5 gap-10 items-center px-10 py-16 bg-[#1d1d1d] dark:bg-slate-950 transition-colors text-slate-200">
                 <div className='md:col-span-2 pe-5'>
                     <Link to="/"> <div className='flex gap-5 items-center'>
                         <img className='h-10 mb-2' src={logo} alt="Tech Shop Logo" />

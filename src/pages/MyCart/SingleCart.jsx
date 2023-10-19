@@ -33,13 +33,13 @@ const SingleCart = ({ cart, index, cartProducts, setCartProducts }) => {
     }
 
     return (
-        <tr className='bg-gray-200 rounded-md border-b border-gray-300 hover:bg-gray-300'>
+        <tr className='bg-gray-200 dark:bg-slate-800 rounded-md border-b border-gray-300 hover:bg-gray-300'>
             <td className="px-3 text-xl font-medium dark:text-gray-400">{index + 1}</td>
             <td className="px-3 py-2 w-20 h-20">
                 <img className='w-full h-full object-cover rounded' src={image} alt="product image" />
             </td>
             <td className="px-3 py-2">
-                <span className='text-lg font-semibold'>{name}</span>
+                <span className='text-lg font-semibold dark:text-gray-200'>{name}</span>
                 <p className="dark:text-gray-400 text-lg text-gray-500">Brand: {brandName}</p>
             </td>
             <td className="px-3 py-2">

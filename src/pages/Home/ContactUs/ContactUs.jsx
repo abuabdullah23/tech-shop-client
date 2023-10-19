@@ -10,7 +10,7 @@ const ContactUs = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
                 {/* Phone */}
-                <div className='py-10 px-5 shadow-lg border rounded-lg bg-gray-200'>
+                <div className='py-10 px-5 shadow-lg border rounded-lg bg-gray-200 dark:bg-slate-600 dark:text-white'>
                     <div className='grid justify-items-stretch'>
                         <img className='h-12 justify-self-center' src="https://cdn-icons-png.flaticon.com/128/1151/1151429.png" alt="Phone Icon" />
                     </div>
@@ -26,7 +26,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* Email */}
-                <div className='py-10 px-5 shadow-lg border rounded-lg bg-gray-200'>
+                <div className='py-10 px-5 shadow-lg border rounded-lg bg-gray-200 dark:bg-slate-600 dark:text-white'>
                     <div className='grid justify-items-stretch'>
                         <img className='h-12 justify-self-center' src="https://cdn-icons-png.flaticon.com/128/646/646094.png" alt="Email Icon" />
                     </div>
@@ -42,7 +42,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* Location */}
-                <div className='py-10 px-5 shadow-lg border rounded-lg bg-gray-200'>
+                <div className='py-10 px-5 shadow-lg border rounded-lg bg-gray-200 dark:bg-slate-600 dark:text-white'>
                     <div className='grid justify-items-stretch'>
                         <img className='h-12 justify-self-center' src="https://cdn-icons-png.flaticon.com/128/1008/1008001.png" alt="Location Icon" />
                     </div>

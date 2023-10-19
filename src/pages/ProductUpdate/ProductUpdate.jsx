@@ -63,22 +63,22 @@ const ProductUpdate = () => {
             <SectionTitle sectionTitle={'Update your product'} />
 
             <div>
-                <form onSubmit={handleUpdateProduct} className='mt-5 border rounded-lg p-5 bg-gray-200'>
+                <form onSubmit={handleUpdateProduct} className='mt-5 border rounded-lg p-5 bg-gray-200 dark:bg-slate-800'>
                     {/* row 1 */}
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Product Name <span className='text-red-400'>*</span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Product Name <span className='text-red-400'>*</span> </p>
                             <input required className='py-2 px-3 border rounded-md w-full' type="text" name="name" id="name" placeholder='Product Name' defaultValue={name} />
                         </div>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Image Url <span className='text-red-400'>*</span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Image Url <span className='text-red-400'>*</span> </p>
                             <input required className='py-2 px-3 border rounded-md w-full' type="text" name="image" id="image" placeholder='Products Image Url' defaultValue={image} />
                         </div>
                     </div>
                     {/* row 2 */}
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Brand Name <span className='text-red-400'></span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Brand Name <span className='text-red-400'></span> </p>
                             <select required className='py-2 px-3 border rounded-md w-full' type="text" name="brandName" id="brandName" placeholder='Brand Name' defaultValue={brandName} >
                                 <option value=''>-- select brand --</option>
                                 <option value='Apple'>Apple</option>
@@ -90,7 +90,7 @@ const ProductUpdate = () => {
                             </select>
                         </div>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Type<span className='text-red-400'>*</span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Type<span className='text-red-400'>*</span> </p>
                             <select required className='py-2 px-3 border rounded-md w-full' type="text" name="type" id="type" defaultValue={type}>
                                 <option value=''>-- select type --</option>
                                 <option value='Computer'>Computer</option>
@@ -119,18 +119,18 @@ const ProductUpdate = () => {
                     {/* row 3 */}
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Price <span className='text-red-400'>*</span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Price <span className='text-red-400'>*</span> </p>
                             <input required className='py-2 px-3 border rounded-md w-full' type="number" name="price" id="price" placeholder='$ Price in Dollar' min={0} defaultValue={price} />
                         </div>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Rating <span className='text-red-400'>*</span> </p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Rating <span className='text-red-400'>*</span> </p>
                             <input required className='py-2 px-3 border rounded-md w-full' type="number" name="rating" id="rating" placeholder='Rating' min={0} defaultValue={rating} />
                         </div>
                     </div>
                     {/* row 4 */}
                     <div className='md:flex gap-4'>
                         <div className='w-full'>
-                            <p className='text-lg font-semibold ps-3 mb-1 mt-2'>Short Description</p>
+                            <p className='text-lg font-semibold ps-3 mb-1 mt-2 dark:text-white'>Short Description</p>
                             <textarea className='py-2 px-3 border rounded-md w-full h-fit' type="text" name="description" id="description" placeholder='Short Description' defaultValue={description} />
                         </div>
                     </div>

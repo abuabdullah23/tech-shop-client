@@ -29,6 +29,7 @@ const Products = () => {
     // for slider images targeted brand
     const brandSliderImages = brands.filter((b) => b.title === title);
     const { slider_images } = brandSliderImages[0];
+    console.log(slider_images);
 
     return (
         <>
@@ -39,7 +40,7 @@ const Products = () => {
                             play={true}
                             interval={2000}
                             animation="foldOutAnimation"
-                            className="h-[400px] w-full -z-10 rounded-md"
+                            className="h-[400px] w-full rounded-md"
                         >
                             {
                                 slider_images.map((img, i) => <div

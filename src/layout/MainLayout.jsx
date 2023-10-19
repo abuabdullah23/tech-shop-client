@@ -5,7 +5,7 @@ import Footer from "../pages/Shared/Footer/Footer";
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="bg-white dark:bg-slate-900 transition-colors duration-500">
             <Navbar />
             <Container>
                 <Outlet />
