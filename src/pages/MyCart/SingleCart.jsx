@@ -43,7 +43,7 @@ const SingleCart = ({ cart, index, cartProducts, setCartProducts }) => {
                 <p className="dark:text-gray-400 text-lg text-gray-500">Brand: {brandName}</p>
             </td>
             <td className="px-3 py-2">
-                <p className='text-lg font-semibold'>${price}</p>
+                <p className='text-lg font-semibold dark:text-white'>${price}</p>
             </td>
             <td className="px-3 py-2">
                 <p onClick={() => handleDeleteCart(_id)} className='p-2 bg-red-500 w-fit rounded-sm text-white hover:bg-red-400 cursor-pointer'> <FaTrashAlt /></p>
