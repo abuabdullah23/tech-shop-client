@@ -9,7 +9,7 @@ const Footer = () => {
             <footer className="footer grid grid-cols-1 md:grid-cols-5 gap-10 items-center px-10 py-16 bg-[#1d1d1d] text-slate-200">
                 <div className='md:col-span-2 pe-5'>
                     <Link to="/"> <div className='flex gap-5 items-center'>
-                        <img className='h-10 mb-2' src={logo} alt="Toy Minds Logo" />
+                        <img className='h-10 mb-2' src={logo} alt="Tech Shop Logo" />
                     </div></Link>
                     <p>
                         Explore our extensive collection of the latest smartphones, laptops, gadgets, and accessories. From sleek design to powerful performance, we bring you the future of tech. Shop with confidence, backed by expert support, fast shipping, and the latest in tech trends.
@@ -39,7 +39,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <span className="footer-title">Contact</span>
-                    <a className="link link-hover">toyminds@info.com</a>
+                    <a className="link link-hover">techshop@info.com</a>
                     <a className="link link-hover">+00 557 855 522</a>
                     <a className="link link-hover">254, Dhaka, Mirpur</a>
                 </div>
