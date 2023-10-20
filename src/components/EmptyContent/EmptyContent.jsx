@@ -2,7 +2,7 @@ import emptyBox from '../../assets/images/empty/empty-box.png'
 
 const EmptyContent = ({emptyText}) => {
     return (
-        <div className='md:p-28 p-10 flex items-center justify-center'>
+        <div className='md:p-28 p-10 flex items-center justify-center h-screen'>
             <div>
                 <div className='flex items-center justify-center'>
                     <img src={emptyBox} className='w-28' alt="empty content image" />

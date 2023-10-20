@@ -49,11 +49,11 @@ const ContactUs = () => {
                     <h2 className='text-2xl font-bold mt-3 mb-3'>Location</h2>
                     <div className='flex gap-2 items-center text-lg'>
                         <HiLocationMarker />
-                        <p> Uttara 514, Dhaka, Bangladesh</p>
+                        <p> Uttara 514, Dhaka</p>
                     </div>
                     <div className='flex gap-2 items-center text-lg'>
                         <HiLocationMarker />
-                        <p> Gulshan 514, Dhaka, Bangladesh</p>
+                        <p> Gulshan 514, Dhaka</p>
                     </div>
                 </div>
             </div>
