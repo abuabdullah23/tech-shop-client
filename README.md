@@ -5,6 +5,14 @@
 
 **Live site link:** https://tech-shop-ee69c.web.app
 
+
+<br />
+
+## 🧰 Technologies I use
+[![My Skills](https://skillicons.dev/icons?i=react,tailwind,firebase,nodejs,express,mongodb)](https://skillicons.dev)
+
+<br />
+
 <br />
 
 ## Website Feature:
